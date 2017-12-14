@@ -5,7 +5,8 @@ abstract class Base{
 
    // Returns Values of Base
    // Virtual function
-   abstract double evaluate();
+   public abstract double evaluate();
+   public abstract void print();
 
 }
 
@@ -56,6 +57,7 @@ class BinaryOperator extends Base{
     public double evaluate(){
         return 0;
     }
+    public void print() { return; }
 
 }
 
@@ -75,5 +77,6 @@ class UnaryOperator extends Base {
     public double evaluate() {
         return 0;
     }
+    public void print() { return; }
 
 }
