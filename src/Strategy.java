@@ -45,3 +45,16 @@ class BubbleSort extends Sort{
         }
     }
 }
+
+class InsertionSort extends Sort{
+
+    public void sort(Container input_container){
+        for (int i=1; i<input_container.size(); i++){
+            for (int j=i; j>0; j--){
+                if (input_container.at(j).evaluate()<input_container.at(j-1).evaluate()){
+                    input_container.swap(j,j-1);
+                }
+            }
+        }
+    }
+}

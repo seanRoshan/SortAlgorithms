@@ -15,8 +15,9 @@ public class Main {
 
         Sort selectionSort = new SelectionSort();
         Sort bubbleSort = new BubbleSort();
+        Sort insertionSort = new InsertionSort();
 
-        ListContainer myContainer = new ListContainer(bubbleSort);
+        ListContainer myContainer = new ListContainer(insertionSort);
 
         myContainer.add_element(A);
         myContainer.add_element(C);
