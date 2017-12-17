@@ -24,14 +24,9 @@ class SelectionSort extends Sort{
             if (minIndex!=i){
                 input_container.swap(i,minIndex);
             }
-
         }
-
     }
-
 }
-
-
 
 class BubbleSort extends Sort{
 

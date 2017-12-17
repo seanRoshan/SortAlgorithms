@@ -8,6 +8,9 @@ abstract class Base{
    public abstract double evaluate();
    public abstract void print();
 
+   @Override
+   public abstract String toString();
+
 }
 
 class Op extends Base{
@@ -31,6 +34,12 @@ class Op extends Base{
         System.out.printf("Value: %f \n",value);
     }
 
+
+    @Override
+    public String toString() {
+        String dataString = String.valueOf(this.value);
+        return dataString;
+    }
 }
 
 class BinaryOperator extends Base{
@@ -59,6 +68,11 @@ class BinaryOperator extends Base{
     }
     public void print() { return; }
 
+    @Override
+    public String toString() {
+        return null;
+    }
+
 }
 
 class UnaryOperator extends Base {
@@ -78,5 +92,10 @@ class UnaryOperator extends Base {
         return 0;
     }
     public void print() { return; }
+
+    @Override
+    public String toString() {
+        return null;
+    }
 
 }
