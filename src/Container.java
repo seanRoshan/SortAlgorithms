@@ -75,6 +75,213 @@ class ListContainer extends Container {
 }
 
 
+class StackContainer extends Container {
+
+    private ArrayList<Base> stackData;
+    private int top;
+    private int size;
+
+
+    StackContainer() {
+        stackData = new ArrayList<Base>();
+        top = -1; // Stack Empty
+        size = 0;
+    }
+
+    public void add_element(Base input_element) {
+        stackData.add(input_element);
+        size++;
+        top++;
+    }
+
+    public void remove_element(int i) {
+        return;
+    }
+
+    public void print() {
+        System.out.println("Stack Size: " + size);
+        for (int i = top; i >= 0; i--) {
+            System.out.printf("Stack[%d]" + stackData.get(i).toString()+"\n", i);
+        }
+    }
+
+    public void sort() {
+        return;
+    }
+
+    public void swap(int i, int j) {
+        return;
+    }
+
+    public Base at(int i) {
+        return stackData.get(i);
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public void push(Base input_element) {
+        this.add_element(input_element);
+    }
+
+
+    public boolean isEmpty(){
+        if (size==0 && top==-1){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public Base pop() {
+
+        try {
+            if (!this.isEmpty()){
+                Base result = stackData.get(top);
+                stackData.remove(top);
+                top--;
+                size--;
+                return result;
+            }
+            else {
+                throw new IndexOutOfBoundsException("Stack is Empty!\n");
+            }
+        }
+
+        catch (IndexOutOfBoundsException e){
+            System.err.println("IndexOutOfBoundsException: "+e.getMessage()+"\tclass: "+ getClass().getName()+"\n\tfucntion: "+Thread.currentThread().getStackTrace()[1].getMethodName());
+            return null;
+        }
+    }
+
+    public Base peek() {
+        try {
+            if (!this.isEmpty()){
+                return stackData.get(top);
+            }
+            else {
+                throw new IndexOutOfBoundsException("Stack is Empty!\n");
+            }
+        }
+        catch (IndexOutOfBoundsException e){
+            System.err.println("IndexOutOfBoundsException: "+e.getMessage()+"\tclass: "+ getClass().getName()+"\n\tfucntion: "+Thread.currentThread().getStackTrace()[1].getMethodName());
+            return null;
+        }
+
+    }
+
+}
+
+
+class QueueContainer extends Container{
+
+    Base[] queueData;
+    int head;
+    int tail;
+    int size;
+    int maxSize;
+
+    QueueContainer(int queueSize){
+        head = -1;
+        tail = -1;
+        size = 0;
+        maxSize = queueSize;
+        queueData = new Base[queueSize];
+    }
+
+    public void add_element(Base input_element){
+        try{
+            if (size<maxSize){
+                if (tail<(maxSize-1)){
+                    if (head==-1){
+                        head++;
+                    }
+                    tail++;
+                }
+                else {
+                    tail=0;
+                }
+                queueData[tail] = input_element;
+                size++;
+            }
+            else {
+                throw new ArrayIndexOutOfBoundsException("Queue is full!\n");
+            }
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            System.err.println("ArrayIndexOutOfBoundsException: "+e.getMessage()+"\t Class:"+this.getClass().getName()+"\n\t Function:"+Thread.currentThread().getStackTrace()[1].getMethodName());
+        }
+    }
+
+    public void remove_element(int i){
+        return;
+    }
+
+    public void enqueue(Base input_element){
+        this.add_element(input_element);
+    }
+
+    public Base dequeue(){
+        if (size>0){
+            Base resultDate = queueData[head];
+            if (head == maxSize-1){
+                head = 0;
+            }
+            else {
+                head++;
+            }
+            size--;
+            return resultDate;
+        }
+        else {
+            return null;
+        }
+
+    }
+
+
+
+    public void print(){
+        if (size>0){
+            if (head<tail){
+                for (int i=head; i<=tail; i++){
+                    System.out.println(queueData[i]);
+                }
+            }
+            else {
+                for (int i=head; i<maxSize; i++){
+                    System.out.println(queueData[i]);
+                }
+                for (int i=0; i<=tail; i++){
+                    System.out.println(queueData[i]);
+                }
+            }
+        }
+    }
+
+    public void sort(){
+        return;
+    }
+
+    public void swap(int i, int j){
+        return;
+    }
+
+    public Base at(int i){
+        System.err.println("Not Valid output!");
+        return null;
+    }
+
+    public int size(){
+        return size;
+    }
+
+
+}
+
+
 class LinkedListContainer extends Container{
 
     class Node {

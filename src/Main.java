@@ -23,10 +23,68 @@ public class Main {
         LinkedListContainer myContainer3 = new LinkedListContainer(insertionSort);
 
 
+        StackContainer myStack = new StackContainer();
+
+
+        QueueContainer myQueue = new QueueContainer(5);
+
+        myQueue.enqueue(A);
+        myQueue.enqueue(B);
+        myQueue.enqueue(C);
+        myQueue.enqueue(D);
+        myQueue.enqueue(E);
+
+        myQueue.dequeue().print();
+        myQueue.dequeue().print();
+
+        myQueue.enqueue(E);
+        myQueue.enqueue(E);
+
+        myQueue.print();
+
+        System.out.printf("____________________________________\n\n");
+
+        myQueue.dequeue().print();
+        myQueue.dequeue().print();
+        myQueue.dequeue().print();
+
+
+        myQueue.print();
+
+        System.out.printf("____________________________________\n\n");
+
+        myQueue.enqueue(A);
+        myQueue.enqueue(B);
+        myQueue.enqueue(C);
+
+        myQueue.print();
+
+        System.out.printf("____________________________________\n\n");
+
+
+
+
+
+/*        myStack.push(A);
+        myStack.push(B);
+        myStack.push(C);
+        myStack.push(D);
+        myStack.push(E);
+
+        myStack.print();
+
+        myStack.peek().print();
+        myStack.pop().print();
+        myStack.pop().print();
+        myStack.pop().print();
+        myStack.pop().print();
+        myStack.pop().print();
+
+        myStack.print();*/
 
         //System.out.println(myContainer2);
 
-        myContainer2.add_element(A);
+/*        myContainer2.add_element(A);
         myContainer2.add_element(B);
         myContainer2.add_element(C);
         myContainer2.add_element(D);
@@ -60,7 +118,7 @@ public class Main {
 
         myContainer3.print();
 
-        System.out.printf("____________________________________\n\n");
+        System.out.printf("____________________________________\n\n");*/
 
 
         //System.out.println(myContainer2);
