@@ -16,8 +16,9 @@ public class Main {
         Sort selectionSort = new SelectionSort();
         Sort bubbleSort = new BubbleSort();
         Sort insertionSort = new InsertionSort();
+        Sort mergeSort = new MargeSort();
 
-        ListContainer myContainer = new ListContainer(insertionSort);
+        ListContainer myContainer = new ListContainer(mergeSort);
 
         LinkedListContainer myContainer2 = new LinkedListContainer(insertionSort);
         LinkedListContainer myContainer3 = new LinkedListContainer(insertionSort);
@@ -61,6 +62,14 @@ public class Main {
 
         System.out.printf("____________________________________\n\n");
 
+
+        Recursive myRecursive = new Recursive();
+
+        myRecursive.GCD_DEMO(81,-153);
+
+        myRecursive.Factorial_DEMO(6);
+
+        myRecursive.Hanoi_DEMO(4);
 
 
 
@@ -126,8 +135,8 @@ public class Main {
 
 
 
-/*        myContainer.add_element(A);
         myContainer.add_element(C);
+        myContainer.add_element(A);
         myContainer.add_element(D);
         myContainer.add_element(E);
         myContainer.add_element(B);
@@ -138,7 +147,7 @@ public class Main {
 
         System.out.printf("____________________________________\n\n");
 
-        myContainer.print();*/
+        myContainer.print();
 
 
     }

@@ -23,6 +23,7 @@ abstract class Container{
     public abstract void swap(int i, int j);
     public abstract Base at(int i);
     public abstract int size();
+    public abstract void modify_element(Base input_element, int index);
 
 }
 
@@ -38,6 +39,10 @@ class ListContainer extends Container {
 
     public void add_element(Base input_element){
         date.add(input_element);
+    }
+
+    public void modify_element(Base input_element, int index){
+        date.set(index,input_element);
     }
 
     public void remove_element(int i){
@@ -92,6 +97,10 @@ class StackContainer extends Container {
         stackData.add(input_element);
         size++;
         top++;
+    }
+
+    public void modify_element(Base input_element, int index){
+        return;
     }
 
     public void remove_element(int i) {
@@ -189,6 +198,10 @@ class QueueContainer extends Container{
         size = 0;
         maxSize = queueSize;
         queueData = new Base[queueSize];
+    }
+
+    public void modify_element(Base input_element, int index){
+        return;
     }
 
     public void add_element(Base input_element){
@@ -372,6 +385,10 @@ class LinkedListContainer extends Container{
         }
         this.headNode = newNode;
         this.size++;
+    }
+
+    public void modify_element(Base input_element, int index){
+        return;
     }
 
     public void add_element_tail(Base input_element){
